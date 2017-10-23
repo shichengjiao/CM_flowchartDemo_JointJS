@@ -1,0 +1,146 @@
+{
+  "cells": [
+    {
+      "type": "link",
+      "source": {
+        "x": 325,
+        "y": 150
+      },
+      "target": {
+        "x": 400,
+        "y": 125
+      },
+      "vertices": [
+        {
+          "x": 100,
+          "y": 150
+        },
+        {
+          "x": 100,
+          "y": 450
+        },
+        {
+          "x": 700,
+          "y": 450
+        },
+        {
+          "x": 700,
+          "y": 150
+        },
+        {
+          "x": 600,
+          "y": 150
+        },
+        {
+          "x": 600,
+          "y": 50
+        },
+        {
+          "x": 400,
+          "y": 50
+        }
+      ],
+      "id": "7f36e27e-1039-4474-83ff-ff55784e7692",
+      "z": 1,
+      "attrs": {
+        ".connection": {
+          "stroke": "#000000"
+        },
+        ".marker-target": {
+          "d": "M 10 0 L 0 5 L 10 10 z"
+        }
+      }
+    },
+    {
+      "type": "basic.Rect",
+      "position": {
+        "x": 325,
+        "y": 125
+      },
+      "size": {
+        "width": 150,
+        "height": 50
+      },
+      "angle": 0,
+      "id": "02743e14-b123-44e7-8c58-89873cde26aa",
+      "z": 2,
+      "attrs": {
+        "rect": {
+          "fill": "none"
+        }
+      }
+    },
+    {
+      "type": "basic.Bulb",
+      "size": {
+        "width": 80,
+        "height": 80
+      },
+      "position": {
+        "x": 660,
+        "y": 260
+      },
+      "angle": 0,
+      "id": "cc2c8562-d079-4d15-bde4-bf16fb19714f",
+      "z": 3,
+      "attrs": {}
+    },
+    {
+      "type": "basic.Switch",
+      "size": {
+        "width": 100,
+        "height": 60,
+        "a": "232",
+        "b": "343"
+      },
+      "position": {
+        "x": 200,
+        "y": 400
+      },
+      "angle": 0,
+      "id": "1507b43a-7763-4f25-b65b-27eb233d0215",
+      "z": 4,
+      "attrs": {
+        "rect": {
+          "id": "switch"
+        }
+      }
+    },
+    {
+      "type": "basic.PowerSupply",
+      "size": {
+        "width": 10,
+        "height": 70
+      },
+      "position": {
+        "x": 550,
+        "y": 415
+      },
+      "angle": 0,
+      "id": "17fe8053-717b-45f8-ae0b-45009dce0399",
+      "z": 5,
+      "attrs": {}
+    },
+    {
+      "type": "basic.Circle",
+      "size": {
+        "width": 80,
+        "height": 80
+      },
+      "position": {
+        "x": 60,
+        "y": 260
+      },
+      "angle": 0,
+      "id": "6e4fe02e-6941-419c-8fda-cefca592cc36",
+      "z": 6,
+      "attrs": {
+        "text": {
+          "font-size": 18,
+          "text": "A+",
+          "fill": "black"
+        }
+      }
+    }
+  ]
+}

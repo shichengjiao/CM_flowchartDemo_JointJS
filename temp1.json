@@ -1,0 +1,433 @@
+{
+  "cells": [
+    {
+      "type": "org.Arrow",
+      "source": {
+        "selector": ".card",
+        "id": "28e2886c-1db5-4ef9-9961-33e8c4cc8ce5"
+      },
+      "target": {
+        "selector": ".card",
+        "id": "0cd6f71f-563e-49bc-8093-a9f58da6720d"
+      },
+      "z": -1,
+      "vertices": [
+        {
+          "x": 385,
+          "y": 180
+        }
+      ],
+      "id": "09c72782-f986-44c1-9099-9bc60dc56b08",
+      "attrs": {
+        ".connection": {
+          "stroke": "#4b4a67",
+          "stroke-width": "2",
+          "fill": "none",
+          "stroke-linejoin": "round"
+        }
+      }
+    },
+    {
+      "type": "org.Arrow",
+      "source": {
+        "selector": ".card",
+        "id": "28e2886c-1db5-4ef9-9961-33e8c4cc8ce5"
+      },
+      "target": {
+        "selector": ".card",
+        "id": "9af0e6ae-9358-4dcc-9b39-8001e45d59e4"
+      },
+      "z": -1,
+      "vertices": [
+        {
+          "x": 385,
+          "y": 180
+        },
+        {
+          "x": 175,
+          "y": 180
+        }
+      ],
+      "id": "ecf51df8-4442-465c-9f11-87abafe31c84",
+      "attrs": {
+        ".connection": {
+          "stroke": "#4b4a67",
+          "stroke-width": "2",
+          "fill": "none",
+          "stroke-linejoin": "round"
+        }
+      }
+    },
+    {
+      "type": "org.Arrow",
+      "source": {
+        "selector": ".card",
+        "id": "28e2886c-1db5-4ef9-9961-33e8c4cc8ce5"
+      },
+      "target": {
+        "selector": ".card",
+        "id": "7cf35f2e-32e4-4606-9407-bfcbe02f7440"
+      },
+      "z": -1,
+      "vertices": [
+        {
+          "x": 385,
+          "y": 180
+        },
+        {
+          "x": 585,
+          "y": 180
+        }
+      ],
+      "id": "e3d0e167-b0f6-4e1d-be2d-bb7352dfa182",
+      "attrs": {
+        ".connection": {
+          "stroke": "#4b4a67",
+          "stroke-width": "2",
+          "fill": "none",
+          "stroke-linejoin": "round"
+        }
+      }
+    },
+    {
+      "type": "org.Arrow",
+      "source": {
+        "selector": ".card",
+        "id": "9af0e6ae-9358-4dcc-9b39-8001e45d59e4"
+      },
+      "target": {
+        "selector": ".card",
+        "id": "0a952b68-d54a-429e-b81b-078f9d189101"
+      },
+      "z": -1,
+      "vertices": [
+        {
+          "x": 175,
+          "y": 380
+        }
+      ],
+      "id": "9613f28a-612e-4cf0-b410-b1fdbd3305cc",
+      "attrs": {
+        ".connection": {
+          "stroke": "#4b4a67",
+          "stroke-width": "2",
+          "fill": "none",
+          "stroke-linejoin": "round"
+        }
+      }
+    },
+    {
+      "type": "org.Arrow",
+      "source": {
+        "selector": ".card",
+        "id": "9af0e6ae-9358-4dcc-9b39-8001e45d59e4"
+      },
+      "target": {
+        "selector": ".card",
+        "id": "80f2a055-efb6-4c49-a793-5e60ad761a6b"
+      },
+      "z": -1,
+      "vertices": [
+        {
+          "x": 175,
+          "y": 530
+        }
+      ],
+      "id": "0b5bfe3a-72f7-4e0c-91a6-c9c686db551b",
+      "attrs": {
+        ".connection": {
+          "stroke": "#4b4a67",
+          "stroke-width": "2",
+          "fill": "none",
+          "stroke-linejoin": "round"
+        }
+      }
+    },
+    {
+      "type": "org.Arrow",
+      "source": {
+        "selector": ".card",
+        "id": "0cd6f71f-563e-49bc-8093-a9f58da6720d"
+      },
+      "target": {
+        "selector": ".card",
+        "id": "858168e9-b468-4953-9630-ca11132dc7c4"
+      },
+      "z": -1,
+      "vertices": [
+        {
+          "x": 385,
+          "y": 380
+        }
+      ],
+      "id": "68eca84d-de66-42d4-a031-eaaf3b96ee7f",
+      "attrs": {
+        ".connection": {
+          "stroke": "#4b4a67",
+          "stroke-width": "2",
+          "fill": "none",
+          "stroke-linejoin": "round"
+        }
+      }
+    },
+    {
+      "type": "org.Member",
+      "size": {
+        "width": 180,
+        "height": 70
+      },
+      "position": {
+        "x": 300,
+        "y": 70
+      },
+      "angle": 0,
+      "id": "28e2886c-1db5-4ef9-9961-33e8c4cc8ce5",
+      "z": 1,
+      "attrs": {
+        ".card": {
+          "fill": "#30d0c6",
+          "stroke": "none"
+        },
+        "image": {
+          "xlink:href": "images/male.png",
+          "opacity": 0.7
+        },
+        ".rank": {
+          "text": "CEO",
+          "fill": "#000",
+          "word-spacing": "-5px",
+          "letter-spacing": 0
+        },
+        ".name": {
+          "font-family": "Arial",
+          "font-size": 13,
+          "text": "Bart Simpson",
+          "fill": "#000",
+          "letter-spacing": 0
+        }
+      }
+    },
+    {
+      "type": "org.Member",
+      "size": {
+        "width": 180,
+        "height": 70
+      },
+      "position": {
+        "x": 90,
+        "y": 200
+      },
+      "angle": 0,
+      "id": "9af0e6ae-9358-4dcc-9b39-8001e45d59e4",
+      "z": 2,
+      "attrs": {
+        ".card": {
+          "fill": "#7c68fd",
+          "stroke": "none"
+        },
+        "image": {
+          "xlink:href": "images/male.png",
+          "opacity": 0.7
+        },
+        ".rank": {
+          "text": "VP Marketing",
+          "fill": "#f1f1f1",
+          "word-spacing": "-5px",
+          "letter-spacing": 0
+        },
+        ".name": {
+          "font-family": "Arial",
+          "font-size": 13,
+          "text": "Homer Simpson",
+          "fill": "#f1f1f1",
+          "letter-spacing": 0
+        }
+      }
+    },
+    {
+      "type": "org.Member",
+      "size": {
+        "width": 180,
+        "height": 70
+      },
+      "position": {
+        "x": 300,
+        "y": 200
+      },
+      "angle": 0,
+      "id": "0cd6f71f-563e-49bc-8093-a9f58da6720d",
+      "z": 3,
+      "attrs": {
+        ".card": {
+          "fill": "#7c68fd",
+          "stroke": "none"
+        },
+        "image": {
+          "xlink:href": "images/female.png",
+          "opacity": 0.7
+        },
+        ".rank": {
+          "text": "VP Sales",
+          "fill": "#f1f1f1",
+          "word-spacing": "-5px",
+          "letter-spacing": 0
+        },
+        ".name": {
+          "font-family": "Arial",
+          "font-size": 13,
+          "text": "Marge Simpson",
+          "fill": "#f1f1f1",
+          "letter-spacing": 0
+        }
+      }
+    },
+    {
+      "type": "org.Member",
+      "size": {
+        "width": 180,
+        "height": 70
+      },
+      "position": {
+        "x": 500,
+        "y": 200
+      },
+      "angle": 0,
+      "id": "7cf35f2e-32e4-4606-9407-bfcbe02f7440",
+      "z": 4,
+      "attrs": {
+        ".card": {
+          "fill": "#7c68fd",
+          "stroke": "none"
+        },
+        "image": {
+          "xlink:href": "images/female.png",
+          "opacity": 0.7
+        },
+        ".rank": {
+          "text": "VP Production",
+          "fill": "#f1f1f1",
+          "word-spacing": "-5px",
+          "letter-spacing": 0
+        },
+        ".name": {
+          "font-family": "Arial",
+          "font-size": 13,
+          "text": "Lisa Simpson",
+          "fill": "#f1f1f1",
+          "letter-spacing": 0
+        }
+      }
+    },
+    {
+      "type": "org.Member",
+      "size": {
+        "width": 180,
+        "height": 70
+      },
+      "position": {
+        "x": 400,
+        "y": 350
+      },
+      "angle": 0,
+      "id": "858168e9-b468-4953-9630-ca11132dc7c4",
+      "z": 5,
+      "attrs": {
+        ".card": {
+          "fill": "#feb563",
+          "stroke": "none"
+        },
+        "image": {
+          "xlink:href": "images/female.png",
+          "opacity": 0.7
+        },
+        ".rank": {
+          "text": "Manager",
+          "fill": "#000",
+          "word-spacing": "-5px",
+          "letter-spacing": 0
+        },
+        ".name": {
+          "font-family": "Arial",
+          "font-size": 13,
+          "text": "Maggie Simpson",
+          "fill": "#000",
+          "letter-spacing": 0
+        }
+      }
+    },
+    {
+      "type": "org.Member",
+      "size": {
+        "width": 180,
+        "height": 70
+      },
+      "position": {
+        "x": 190,
+        "y": 350
+      },
+      "angle": 0,
+      "id": "0a952b68-d54a-429e-b81b-078f9d189101",
+      "z": 6,
+      "attrs": {
+        ".card": {
+          "fill": "#feb563",
+          "stroke": "none"
+        },
+        "image": {
+          "xlink:href": "images/male.png",
+          "opacity": 0.7
+        },
+        ".rank": {
+          "text": "Manager",
+          "fill": "#000",
+          "word-spacing": "-5px",
+          "letter-spacing": 0
+        },
+        ".name": {
+          "font-family": "Arial",
+          "font-size": 13,
+          "text": "Lenny Leonard",
+          "fill": "#000",
+          "letter-spacing": 0
+        }
+      }
+    },
+    {
+      "type": "org.Member",
+      "size": {
+        "width": 180,
+        "height": 70
+      },
+      "position": {
+        "x": 190,
+        "y": 500
+      },
+      "angle": 0,
+      "id": "80f2a055-efb6-4c49-a793-5e60ad761a6b",
+      "z": 7,
+      "attrs": {
+        ".card": {
+          "fill": "#feb563",
+          "stroke": "none"
+        },
+        "image": {
+          "xlink:href": "images/male.png",
+          "opacity": 0.7
+        },
+        ".rank": {
+          "text": "Manager",
+          "fill": "#000",
+          "word-spacing": "-5px",
+          "letter-spacing": 0
+        },
+        ".name": {
+          "font-family": "Arial",
+          "font-size": 13,
+          "text": "Carl Carlson",
+          "fill": "#000",
+          "letter-spacing": 0
+        }
+      }
+    }
+  ]
+}
