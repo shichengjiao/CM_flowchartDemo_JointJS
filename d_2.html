@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--事件-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/jointjs/dist/joint.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/lodash/index.js"></script>
+    <script src="node_modules/backbone/backbone.js"></script>
+    <script src="node_modules/jointjs/dist/joint.js"></script>
+</head>
+<body>
+    <div id="myholder"></div>
+    <script type="text/javascript">
+
+        var graph = new joint.dia.Graph;
+//        graph.on('add', function(cell) {
+//            alert('New cell with id ' + cell.id + ' added to the graph.')
+//        });
+        var paper = new joint.dia.Paper({
+            el: $('#myholder'),
+            width: 600,
+            height: 200,
+            model: graph,
+            gridSize: 1
+        });
+
+        var rect = new joint.shapes.basic.Rect({
+            position: { x: 100, y: 30 },
+            size: { width: 100, height: 30 },
+            attrs: { rect: { fill: 'blue' }, text: { text: 'my box', fill: 'white' } }
+        });
+
+        var rect2 = rect.clone();
+        rect2.translate(300);
+
+        var link = new joint.dia.Link({
+            source: { id: rect.id },
+            target: { id: rect2.id }
+        });
+        //cellView是自己连线，targetView是连接到哪个元素
+//        paper.on('link:connect', function(cellView, evt, targetView, dom,s_t) {
+//            console.log(targetView);
+//        });
+//        paper.on('cell:pointerclick', function(cellView, evt, x, y) {
+//            console.log(555);
+//        });
+        graph.addCells([rect, rect2, link]);
+
+//        graph.on('all', function(eventName, cell) {
+//            console.log(cell);
+//        });
+
+        rect.on('change:position', function(element) {
+            console.log(element.id, ':', element.get('position'));
+        });
+        //更改rect的属性配置......
+//        rect.set("position",{x: 100, y: 230});
+//        rect.set("attrs",{ rect: { fill: 'red' }});
+
+//        link.on('change:source', function() {
+//            console.log(666);
+//        });
+    </script>
+</body>
+</html>
