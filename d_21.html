@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--自定义图形-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/jointjs/dist/joint.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/lodash/index.js"></script>
+    <script src="node_modules/backbone/backbone.js"></script>
+    <script src="node_modules/jointjs/dist/joint.js"></script>
+</head>
+<body>
+    <div id="myholder"></div>
+    <div id="paper-link-out"></div>
+    <script type="text/javascript">
+        var graph = new joint.dia.Graph;
+        var paper = new joint.dia.Paper({ el: $('#myholder'), width: 650, height: 200, gridSize: 1, model: graph });
+
+        joint.dia.LinkView.extend({
+//这个就是我自定义的方法，直接使用随便哪个方法
+            render: function() {
+
+                // call parent's render
+                joint.dia.LinkView.prototype.render.apply(this, arguments);
+
+                // here we create and append the pattern into the paper SVG <defs> element
+                // and tell the link to use it
+
+                // it is a good convetion to return `this` to enable chaining
+                return this;
+            },
+
+            remove: function() {
+
+                // call parent's remove first
+                joint.dia.LinkView.prototype.remove.apply(this, arguments);
+
+                // here we remove the pattern from the paper SVG <defs> element
+
+                return this;
+            },
+
+            update: function() {
+
+                // call parent's update first
+                joint.dia.LinkView.prototype.update.apply(this, arguments);
+
+                // here we generate an image and set it as a pattern
+
+                return this;
+            }
+        });
+    </script>
+</body>
+</html>

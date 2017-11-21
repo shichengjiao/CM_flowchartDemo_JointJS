@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--自定义图形-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/jointjs/dist/joint.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/lodash/index.js"></script>
+    <script src="node_modules/backbone/backbone.js"></script>
+    <script src="node_modules/jointjs/dist/joint.js"></script>
+</head>
+<body>
+    <div id="myholder"></div>
+    <script type="text/javascript">
+        var graph = new joint.dia.Graph;
+        var paper = new joint.dia.Paper({ el: $('#myholder'), width: 650, height: 200, gridSize: 1, model: graph });
+        //定义有端口的模型,相当于rect
+        var m1 = new joint.shapes.devs.Model({
+            position: { x: 50, y: 50 },
+            size: { width: 90, height: 90 },
+            inPorts: ['in1','in2'],
+            outPorts: ['out'],
+            ports: {
+                groups: {
+                    'in': {
+                        attrs: {
+                            '.port-body': {
+                                fill: '#16A085'
+                            }
+                        }
+                    },
+                    'out': {
+                        attrs: {
+                            '.port-body': {
+                                fill: '#E74C3C'
+                            }
+                        }
+                    }
+                }
+            },
+            attrs: {
+                '.label': { text: 'Model', 'ref-x': .5, 'ref-y': .2 },
+                rect: { fill: '#2ECC71' }
+            }
+        });
+        graph.addCell(m1);
+    </script>
+</body>
+</html>

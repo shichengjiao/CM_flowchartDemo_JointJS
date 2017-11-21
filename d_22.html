@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--自定义图形-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/jointjs/dist/joint.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/lodash/index.js"></script>
+    <script src="node_modules/backbone/backbone.js"></script>
+    <script src="node_modules/jointjs/dist/joint.js"></script>
+</head>
+<body>
+    <div id="myholder"></div>
+    <div id="paper-link-out"></div>
+    <script type="text/javascript">
+        var graph = new joint.dia.Graph;
+        var paper = new joint.dia.Paper({ el: $('#myholder'), width: 650, height: 200, gridSize: 1, model: graph });
+
+        joint.dia.LinkView.extend({
+            render: function() {
+                joint.dia.LinkView.prototype.render.apply(this, arguments);
+                // make sure that pattern doesn't already exist
+                if (!this.pattern) {
+
+                    // create the pattern and the image element
+                    this.pattern = V('<pattern id="pattern-' + this.id + '" patternUnits="userSpaceOnUse"><image/></pattern>');
+
+                    // cache the image element for a quicker access
+                    this.patternImage = this.pattern.findOne('image');
+
+                    // append the pattern to the paper's defs
+                    V(this.paper.svg).defs().append(this.pattern);
+                }
+
+                // tell the '.connection' path to use the pattern
+                var connection = V(this.el).findOne('.connection').attr({
+                    stroke: 'url(#pattern-' + this.id + ')'
+                });
+
+                // cache the stroke width
+                this.strokeWidth = connection.attr('stroke-width') || 1;
+
+                return this;
+            },
+
+            remove: function() {
+
+                // call parent's remove first
+                joint.dia.LinkView.prototype.remove.apply(this, arguments);
+                // remove the pattern from the DOM
+                this.pattern.remove();
+                return this;
+            },
+
+            update: function() {
+
+                // call parent's update first
+                joint.dia.LinkView.prototype.update.apply(this, arguments);
+
+                var strokeWidth = this.strokeWidth;
+
+                // we get the bounding box of the linkView without the transformations
+                // and expand it to all 4 sides by the stroke width
+                // (making sure there is always enough room for drawing,
+                // even if the bounding box was tiny.
+                // Note that the bounding box doesn't include the stroke.)
+                var bbox = g.rect(V(this.el).bbox(true)).moveAndExpand({
+                    x: - strokeWidth,
+                    y: - strokeWidth,
+                    width: 2 * strokeWidth,
+                    height: 2 * strokeWidth
+                });
+
+                // create an array of all the points the link goes through
+                // (route doesn't contain the connection points)
+                var points = [].concat(this.sourcePoint, this.route, this.targetPoint);
+
+                // transform all the points to the link coordinate system
+                points = _.map(points, function(point) {
+                    return g.point(point.x - bbox.x, point.y - bbox.y);
+                });
+
+                // create a canvas of the size same as the link bounding box
+                var canvas = document.createElement('canvas');
+                canvas.width = bbox.width;
+                canvas.height = bbox.height;
+
+                var ctx = canvas.getContext('2d');
+                ctx.lineWidth = strokeWidth;
+
+                // iterate over the points and draw the link's new look into the canvas
+                for (var i = 0, pointsCount = points.length - 1; i < pointsCount; i++) {
+
+                    var from = points[i];
+                    var to = point[i + 1];
+
+                    // draw something into the canvas
+                    // e.g a line from 'from.x','from.y' to 'to.x','to.y'
+                }
+
+                // generate data URI from the canvas
+                var dataUri = canvas.toDataURL('image/png');
+
+                // set the pattern's size to the size of the link bounding box
+                this.pattern.attr(bbox);
+
+                // update the pattern image and the dimensions
+                this.patternImage.attr({
+                    width: bbox.width,
+                    height: bbox.height,
+                    'xlink:href': dataUri
+                });
+
+                return this;
+            }
+        });
+        joint.connectors.normalDimFix = function(sourcePoint, targetPoint, vertices) {
+
+            var dimensionFix = 1e-3;
+
+            var d = ['M', sourcePoint.x, sourcePoint.y];
+
+            _.each(vertices, function(vertex) { d.push(vertex.x, vertex.y); });
+
+            d.push(targetPoint.x + dimensionFix, targetPoint.y + dimensionFix);
+
+            return d.join(' ');
+        };
+    </script>
+</body>
+</html>

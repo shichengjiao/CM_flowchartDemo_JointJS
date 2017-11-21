@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--自定义图形-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/jointjs/dist/joint.css">
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/lodash/index.js"></script>
+    <script src="node_modules/backbone/backbone.js"></script>
+    <script src="node_modules/jointjs/dist/joint.js"></script>
+</head>
+<body>
+    <div id="myholder"></div>
+    <div id="paper-link-out"></div>
+    <script type="text/javascript">
+        var graph = new joint.dia.Graph;
+        var paper = new joint.dia.Paper({
+            el: $('#myholder'),
+            width: 650, height: 200, gridSize: 1,
+            model: graph,
+            //在当前画布上所有默认的link样式......
+            defaultLink: new joint.dia.Link({
+                attrs: { '.marker-target': { d: 'M 10 0 L 0 5 L 10 10 z' } }
+            }),
+            validateConnection: function(cellViewS, magnetS, cellViewT, magnetT, end, linkView) {
+                console.log(cellViewS);
+                // Prevent linking from input ports.
+                if (magnetS && magnetS.getAttribute('port-group') === 'in') return false;
+                // Prevent linking from output ports to input ports within one element.
+                if (cellViewS === cellViewT) return false;
+                // Prevent linking to input ports.
+                return magnetT && magnetT.getAttribute('port-group') === 'in';
+            },
+            validateMagnet: function(cellView, magnet) {
+                // Note that this is the default behaviour. Just showing it here for reference.
+                // Disable linking interaction for magnets marked as passive (see below `.inPorts circle`).
+                return magnet.getAttribute('magnet') !== 'passive';
+            }
+        });
+
+        var m1 = new joint.shapes.devs.Model({
+            position: { x: 50, y: 50 },
+            size: { width: 90, height: 90 },
+            inPorts: ['in1','in2'],
+            outPorts: ['out'],
+            ports: {
+                groups: {
+                    'in': {
+                        attrs: {
+                            '.port-body': {
+                                fill: '#16A085',
+                                magnet: 'passive'
+                            }
+                        }
+                    },
+                    'out': {
+                        attrs: {
+                            '.port-body': {
+                                fill: '#E74C3C'
+                            }
+                        }
+                    }
+                }
+            },
+            attrs: {
+                '.label': { text: 'Model', 'ref-x': .5, 'ref-y': .2 },
+                rect: { fill: '#2ECC71' }
+            }
+        });
+        graph.addCell(m1);
+
+        var m2 = m1.clone();
+        m2.translate(300, 0);
+        graph.addCell(m2);
+        m2.attr('.label/text', 'Model 2');
+    </script>
+</body>
+</html>
